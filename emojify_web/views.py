@@ -9,7 +9,7 @@ def index(request):
 
 class RunProfilePicEmojify(APIView):
     def post(self, request):
-        upload_server_emojis.upload()
+        upload_server_emojis.upload(settings.GUILD_ID, settings.API_KEY_SECRET)
         return HttpResponseRedirect('/')
 
 class SubmitDoodleEmojify(APIView):

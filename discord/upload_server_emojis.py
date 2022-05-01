@@ -86,9 +86,7 @@ def _get_user_emoji_id(guildId : str, user: dict, api_key : str):
     for emoji in json.loads(r.text):
         if emoji["name"] == user["username"]: return emoji["id"]
 
-def upload ():
-  api_key = "OTY2ODY0MzE3MTg0MTAyNDMw.YmH8kA.2y6Oyv1nhkf4S0rY3QmGa5gui4I"
-  guild = "559139679388172304"
+def upload (api_key, guild):
   role = "966891817138290699"
   users = get_users(api_key, guild, role)
   for user in users:
